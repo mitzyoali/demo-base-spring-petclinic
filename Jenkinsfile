@@ -1,11 +1,13 @@
 pipeline {
     agent any
+    def mvnHome
     stages {
       stage('prueba 1') {
         steps {
-          sh '''
-          mvn tomcat7:run
-          '''
+            mvnHome = tool 'M3'
+            sh '''
+              mvn tomcat7:run
+            '''
         }
       }
     }
