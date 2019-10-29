@@ -4,7 +4,6 @@ pipeline {
       stage('prueba 1') {
         steps {
             sh '''
-              ls
               pwd
               cd /home/cloud_user/chef-repo/
               ls
