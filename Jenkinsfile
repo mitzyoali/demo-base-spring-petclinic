@@ -1,10 +1,15 @@
+  
 pipeline {
-    agent any
+    agent { label 'node' }
     stages {
       stage('prueba 1') {
         steps {
             sh '''
-              mvn tomcat7:run
+              ls
+              pwd
+              cd /home/cloud_user/chef-repo/
+              ls
+              knife ssh "${NODE}" 'sudo chef-client' -x cloud_user -P "${PASSWD}"
             '''
         }
       }
