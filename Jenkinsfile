@@ -9,7 +9,7 @@ pipeline {
               pwd
               cd /home/cloud_user/chef-repo/
               ls
-              knife ssh "${NODE}" 'sudo chef-client' -x cloud_user -P "${PASSWD}"
+              knife ssh 'name:web-node1' 'sudo chef-client' -x cloud_user -P 12345678
             '''
         }
       }
