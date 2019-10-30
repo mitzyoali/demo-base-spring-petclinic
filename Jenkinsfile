@@ -1,7 +1,7 @@
 pipeline {
     agent { label 'node' }
     stages {
-      stage('1st stage') {
+      stage('primer stage') {
         steps {
             sh '''
               ls
