@@ -1,2 +1,3 @@
-<body style="background-repeat: no-repeat; background-size: cover; background-image: url(/petclinic/resources/images/accenture9.jpg)"> 
-<!-- body style="background-repeat: no-repeat; background-size: cover; background-image: url(/petclinic/resources/images/accenture14.jpg)" -->
+<!--spring:url value="/resources/images/header.png" var="banner"/ -->
+<spring:url value="/resources/images/accenture6.jpg" var="banner"/>
+<img src="${banner}"/> -->
