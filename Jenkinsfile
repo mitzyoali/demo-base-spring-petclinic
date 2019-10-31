@@ -1,11 +1,13 @@
 pipeline {
     agent { label 'node' }
     stages {
-       stage {
-           mail (to: 'mitzi.velez@accenture.com',
-                 subject: "Job '${env.JOB_NAME}' (${env.BUILD_NUMBER}) is waiting for input",
-                 body: "Please go to ${env.BUILD_URL}.");
-           input 'Ready to go?'; 
+       stage ('Approval'){
+           steps {
+               mail (to: 'mitzi.velez@accenture.com',
+                     subject: "Job '${env.JOB_NAME}' (${env.BUILD_NUMBER}) is waiting for input",
+                     body: "Please go to ${env.BUILD_URL}.");
+               input 'Ready to go?'; 
+           }
         }
       stage('1st stage') {
         steps {
