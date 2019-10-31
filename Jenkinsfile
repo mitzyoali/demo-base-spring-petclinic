@@ -14,7 +14,7 @@ pipeline {
     stage('second stage') {
         steps {
             sh '''
-             echo 'hello world.'
+             echo 'hello world'
             '''
         }
       }
