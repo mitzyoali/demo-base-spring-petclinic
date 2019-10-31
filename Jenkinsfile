@@ -3,7 +3,7 @@ pipeline {
     stages {
        stage ('Approval'){
            steps {
-               mail (to: 'mitzyoali11@gmail.com',
+               mail (to: 'mitzyoali11@hotmail.com',
                      subject: "Job '${env.JOB_NAME}' (${env.BUILD_NUMBER}) is waiting for input",
                      body: "Please go to ${env.BUILD_URL}.");
                input 'Ready to go?'; 
