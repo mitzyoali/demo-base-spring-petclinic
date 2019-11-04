@@ -17,10 +17,24 @@ pipeline {
             '''
         }
       }
-    stage('second stage') {
+    stage('sending email') {
         steps {
             sh '''
-             echo 'hello world'
+             echo 'sending email'
+            '''
+        }
+      }
+    stage('move to production branch') {
+        steps {
+            sh '''
+             echo 'git merge to production'
+            '''
+        }
+      }
+    stage('run in production') {
+        steps {
+            sh '''
+             echo 'running production'
             '''
         }
       }
