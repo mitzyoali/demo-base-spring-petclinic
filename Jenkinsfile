@@ -5,7 +5,7 @@ pipeline {
         steps {
             sh '''
               cd /home/cloud_user/chef-repo/
-              knife ssh "${NODE_NAME}" 'sudo chef-client' -x cloud_user -P "${PASS_NODE}"
+              knife ssh 'name:develop' 'sudo chef-client' -x cloud_user -P "${PASS_NODE}"
             '''
         }
       }
