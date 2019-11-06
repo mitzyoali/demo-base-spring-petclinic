@@ -1,13 +1,6 @@
 pipeline {
     agent { label 'node' }
     stages {
-      stage('Approval to Production?') {
-        steps {
-            timeout(time: 180, unit: 'SECONDS') {
-            input 'Continue to Deploy Production?'
-            }
-        }
-      }
       stage('1st stage') {
         steps {
             sh '''
@@ -21,6 +14,13 @@ pipeline {
             sh '''
              echo 'sending email'
             '''
+        }
+      }
+    stage('Approval to Production?') {
+        steps {
+            timeout(time: 24, unit: 'HOURS') {
+            input 'Continue to Deploy Production?'
+            }
         }
       }
     stage('move to production branch') {
