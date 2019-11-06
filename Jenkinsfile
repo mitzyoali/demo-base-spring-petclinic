@@ -6,7 +6,7 @@ pipeline {
             sh '''
               cd /home/cloud_user/chef-repo/
               knife ssh 'name:develop' 'sudo chef-client' -x cloud_user -P "${PASS_NODE}"
-              echo "/home/cloud_user/prueba.txt"
+              cat "/home/cloud_user/prueba.txt"
             '''
         }
       }
