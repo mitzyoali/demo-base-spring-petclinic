@@ -16,6 +16,13 @@ pipeline {
             '''
         }
       }
+    stage('Approval to Production?') {
+        steps {
+            timeout(time: 180, unit: 'SECONDS') {
+            input 'Continue to Deploy Production?'
+            }
+        }
+      }
     stage('move to production branch') {
         steps {
             sh '''
