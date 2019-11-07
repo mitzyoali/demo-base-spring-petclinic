@@ -34,6 +34,7 @@ pipeline {
                 sh '''
                 git branch -la
                 git checkout master
+                git pull
                 git merge develop
                 git push -f
                 echo 'git merge to production .'
