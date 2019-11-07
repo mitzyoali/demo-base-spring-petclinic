@@ -41,9 +41,7 @@ pipeline {
                 git merge upstream/develop
                 git fetch --all
                 git pull
-                git config --global user.name $GIT_USERNAME
-                git push -f origin https://${GIT_USERNAME}:${GIT_PASSWORD}@github.com/${GIT_USERNAME}/demo-base-spring-petclinic
-                git push --set-upstream origin master
+                git push --force --set-upstream origin master
                 echo 'git merge to production .'
                 pwd
                 ls
