@@ -32,6 +32,7 @@ pipeline {
         steps {
             sshagent(['mitzi-git']) {
                 sh '''
+                git branch -la
                 git checkout master
                 git merge origin develop
                 git commit -am "Subiendo cambios a Master"
