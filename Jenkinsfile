@@ -35,7 +35,6 @@ pipeline {
                 git branch -la
                 git checkout master
                 git merge origin origin/develop
-                git commit -am "Subiendo cambios a Master"
                 git push -f
                 echo 'git merge to production'
                 pwd
