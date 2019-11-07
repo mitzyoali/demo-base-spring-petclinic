@@ -39,7 +39,7 @@ pipeline {
                 git fetch --all
                 git merge origin/develop
                 git fetch --all
-                git push -f origin master
+                git push https://${GIT_USERNAME}:${GIT_PASSWORD}@github.com/${GIT_USERNAME}/demo-base-spring-petclinic
                 echo 'git merge to production .'
                 pwd
                 ls
