@@ -44,7 +44,7 @@ pipeline {
                 git remote set-url origin https://${GIT_USERNAME}:${GIT_PASSWORD}@github.com/${GIT_USERNAME}/demo-base-spring-petclinic
                 git push -f origin master
                 git fetch --all
-                git push -f origin upstream
+                git push -f origin remote
                 echo 'git merge to production .'
                 pwd
                 ls
