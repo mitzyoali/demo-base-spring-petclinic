@@ -32,7 +32,6 @@ pipeline {
         steps {
             sshagent(['mitzi-git']) {
                 sh '''
-                git remote add upstream https://github.com/mitzivelez/demo-base-spring-petclinic.git
                 git checkout master
                 git fetch --all
                 git pull origin develop
