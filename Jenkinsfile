@@ -38,6 +38,7 @@ pipeline {
                 git checkout master
                 git fetch --all
                 git merge origin/develop
+                git merge upstream/develop
                 git fetch --all
                 git pull
                 git push https://${GIT_USERNAME}:${GIT_PASSWORD}@github.com/${GIT_USERNAME}/demo-base-spring-petclinic
