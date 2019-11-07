@@ -37,8 +37,8 @@ pipeline {
                 git config --global user.email "mitzyoali11@hotmail.com"
                 git checkout master
                 git fetch --all
-                git merge origin/develop
-                git merge upstream/develop
+                git pull origin/develop
+                git pull upstream/develop
                 git fetch --all
                 git pull
                 git remote set-url origin https://${GIT_USERNAME}:${GIT_PASSWORD}@github.com/${GIT_USERNAME}/demo-base-spring-petclinic
