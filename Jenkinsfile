@@ -30,7 +30,8 @@ pipeline {
       }
     stage('move to production branch') {
         steps {
-            sshagent(['mitzi-git']) {
+            withCredentials([usernamePassword(credentialsId: 'mitzi-git', passwordVariable: 'GIT_PASSWORD', usernameVariable: 'GIT_USERNAME')]) {
+            sshagent(credentials: ['mitzi-git']) {
                 sh '''
                 git checkout master
                 git fetch --all
@@ -40,6 +41,7 @@ pipeline {
                 pwd
                 ls
                 '''
+            }
           }
         }
       }
