@@ -33,6 +33,8 @@ pipeline {
                 git commit -am "Subiendo cambios a Master"
                 git push -f
                 echo 'git merge to production'
+                pwd
+                ls
                 '''
           }
         }
@@ -40,7 +42,7 @@ pipeline {
     stage('run in production') {
         steps {
             sh '''
-             echo 'running production'
+             knife ssh 'name:production' 'sudo chef-client' -x cloud_user -P "${PASS_NODE}"
             '''
         }
       }
