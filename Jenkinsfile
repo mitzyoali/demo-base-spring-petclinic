@@ -26,9 +26,15 @@ pipeline {
       }
     stage('move to production branch') {
         steps {
-            sh '''
-             echo 'git merge to production'
-            '''
+            sshagent(['mitzi-git']) {
+                sh '''
+                git checkout master
+                git merge origin develop
+                git commit -am "Subiendo cambios a Master"
+                git push -f
+                echo 'git merge to production'
+                '''
+          }
         }
       }
     stage('run in production') {
