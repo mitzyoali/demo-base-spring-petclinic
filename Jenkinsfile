@@ -45,8 +45,6 @@ pipeline {
                 git push -f origin master
                 git fetch --all
                 echo 'git merge to production .'
-                pwd
-                ls
                 '''
             }
           }
