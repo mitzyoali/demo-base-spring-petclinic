@@ -30,16 +30,20 @@ pipeline {
       }
     stage('move to production branch') {
         steps {
-            sshagent(['mitzi-git']) {
+            withCredentials([usernamePassword(credentialsId: 'mitzi-git', passwordVariable: 'GIT_PASSWORD', usernameVariable: 'GIT_USERNAME')]) {
+            sshagent(credentials: ['mitzi-git']) {
                 sh '''
-                git branch -la
+                git config --global user.name $GIT_USERNAME
+                git config --global user.email "mitzyoali11@hotmail.com"
                 git checkout master
-                git merge origin origin/develop
-                git push -f
+                git fetch --all
+                git merge origin/develop
+                git push -f -u origin master 
                 echo 'git merge to production .'
                 pwd
                 ls
                 '''
+            }
           }
         }
       }
