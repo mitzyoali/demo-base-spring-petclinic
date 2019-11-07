@@ -33,6 +33,8 @@ pipeline {
             withCredentials([usernamePassword(credentialsId: 'mitzi-git', passwordVariable: 'GIT_PASSWORD', usernameVariable: 'GIT_USERNAME')]) {
             sshagent(credentials: ['mitzi-git']) {
                 sh '''
+                git config --global user.name $GIT_USERNAME
+                git config --global user.email "mitzyoali11@hotmail.com"
                 git checkout master
                 git fetch --all
                 git merge origin/develop
