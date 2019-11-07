@@ -36,7 +36,7 @@ pipeline {
                 git checkout master
                 git merge origin origin/develop
                 git push -f
-                echo 'git merge to production'
+                echo 'git merge to production .'
                 pwd
                 ls
                 '''
