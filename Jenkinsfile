@@ -35,7 +35,8 @@ pipeline {
                 git remote add upstream https://github.com/mitzivelez/demo-base-spring-petclinic.git
                 git checkout master
                 git fetch --all
-                git merge upstream/master
+                git pull origin develop
+                git merge upstream/master 
                 git push -f
                 echo 'git merge to production .'
                 pwd
