@@ -1,5 +1,9 @@
 pipeline {
     agent { label 'node' }
+    environment {
+    // trust known_hosts
+    GIT_SSH_COMMAND = "ssh -o StrictHostKeyChecking=no"
+  }
     stages {
       stage('1st stage') {
         steps {
