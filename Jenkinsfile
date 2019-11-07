@@ -32,11 +32,10 @@ pipeline {
         steps {
             sshagent(['mitzi-git']) {
                 sh '''
-                git branch -la
+                git remote add upstream https://github.com/mitzivelez/demo-base-spring-petclinic.git
                 git checkout master
-                git pull
-                git fetch origin
-                git merge origin/master develop
+                git fetch --all
+                git merge upstream/master
                 git push -f
                 echo 'git merge to production .'
                 pwd
