@@ -53,6 +53,7 @@ pipeline {
     stage('run in production') {
         steps {
             sh '''
+             cd /home/cloud_user/chef-repo/
              knife ssh 'name:production' 'sudo chef-client' -x cloud_user -P "${PASS_NODE}"
             '''
         }
