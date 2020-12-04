@@ -1,5 +1,5 @@
 pipeline {
-    agent { label 'node' }
+    agent any
     environment {
     // trust known_hosts
     GIT_SSH_COMMAND = "ssh -o StrictHostKeyChecking=no"
